@@ -81,3 +81,9 @@ func TestTrimMiddle(t *testing.T) {
 		require.Equal(t, "Hel...ld", actual)
 	})
 }
+
+func BenchmarkTrimMiddle(b *testing.B) {
+	for b.Loop() {
+		xstrings.TrimMiddle("Hello world", 5)
+	}
+}
